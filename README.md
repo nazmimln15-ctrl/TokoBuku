@@ -1,3 +1,10 @@
+## requirement
+-pakai laravel v12
+-php v8.5
+-nodej.s v24.11.1
+-composer v2.9.2
+-npm v11.6.2
+
 ## dokumentasi
 
 #landing page nya
