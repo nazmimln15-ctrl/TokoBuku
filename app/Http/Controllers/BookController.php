@@ -3,6 +3,8 @@
 
 namespace App\Http\Controllers;
 
+
+
 use App\Http\Requests\StoreBookRequest;
 use App\Models\Book;
 use App\Models\Category;
@@ -11,6 +13,8 @@ use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
 {
+    
+
     public function index(Request $request)
     {
         $q = $request->query('q', '');
@@ -41,7 +45,7 @@ class BookController extends Controller
             $data['cover_path'] = $path;
         }
 
-        // Tangani kategori: jika pilih category_id gunakan itu, jika input nama buat/ambil firstOrCreate
+        // Tangani kategori
         if (!empty($data['category_id'] ?? null)) {
             $data['category_id'] = (int) $data['category_id'];
             unset($data['category']);
@@ -60,7 +64,7 @@ class BookController extends Controller
 
     public function show(Book $book)
     {
-        return view('books.show', compact('book')); // opsional bila butuh
+        return view('books.show', compact('book'));
     }
 
     public function edit(Book $book)

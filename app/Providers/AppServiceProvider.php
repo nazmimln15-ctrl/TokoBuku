@@ -22,4 +22,7 @@ class AppServiceProvider extends ServiceProvider
     {
         Paginator::useBootstrap();
     }
+
+    public const HOME = '/dashboard';
+
 }
